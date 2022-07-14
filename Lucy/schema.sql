@@ -17,5 +17,5 @@ number_bathrooms INT
 number_bedrooms INT
 number_stories INT
 year_built DATE
-garage_spaces INT
+has_garage VARCHAR
 has_association VARCHAR
