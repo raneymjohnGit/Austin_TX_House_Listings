@@ -47,7 +47,9 @@ Team members present a provisional database that stands in for the final databas
 
 
 ## Reason why we selected the topic
-    Low inventory, fervid competition and massive price gains have battered buyers since covid pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges.   The problem is that even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to come online or moving to a more affordable area. And there are many more who are hoping prices will drop—but that might not happen anytime soon.  And this gives us an opportunity to apply machine learning models to predict the prices of houses in the year 2023 based on the available features.
+Low inventory, fervid competition and massive price gains have battered buyers since covid pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges. The problem is that even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to come online or moving to a more affordable area. And there are many more who are hoping prices will drop—but that might not happen anytime soon.  
+
+And this gives us an opportunity to apply machine learning models to predict the prices of houses in the year 2023 based on the available features.
 
 ## Communication Protocols
     - Join Weekly class hours
