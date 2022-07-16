@@ -1,0 +1,2 @@
+The topic we chose was Austin, Texas housing prices becuase our group was intereted to see if we could apply a machine learning to such a robust market. 
+Can we determine the price of a house based on certain features of the property.
