@@ -44,6 +44,7 @@ The question we are trying to answer is can we determine the price of a house in
 
 ### Database 
 -   pgAdmin is the database we intend to use, and we will integrate Flask to display the data.
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/DatabaseStructure_Image1.png)
 
 ### Dashboard:
 -   In addition to using a Flask template, we will also integrate D3.js for a fully functioning and interactive dashboard. It will be hosted on github. We will also 
