@@ -13,43 +13,42 @@ With mortgage rates rising and housing prices continuing to climb, a new study f
 - Kaggle Data set for Data https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data austinHousingData.csv
 
 ## Objective:
--   Build a model that accurately predicts house prices in Austin
+-   Build a Machine Learning Model to predict house prices in Austin and see what features drive the price of the houses in Austin.
 
 ## Deliverbale 1: Final Project Segment 1
 
-### Presentation
-Team members have drafted their project, including the following: 
-1.Selected topic 
-2.Reason why they selected their topic 
-3.Description of their source of data 
-4.Questions they hope to answer with the data
+### Reason why we selected the topic
+Low inventory, fiery competition and massive price gains have battered buyers since covid pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges. The problem is that even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to come online or moving to a more affordable area. And there are many more who are hoping prices will drop—but that might not happen anytime soon.  
 
-### GitHub
+And we chose Austin,Texas house listings as our topic, since we are interested to see if we could apply a machine learning model to such a robust market.
 
-1.  Main Branch Includes a README.md 
-2.  README.md README.md must include: Description of the communication protocols 
-3.  Individual Branches 
-	-   At least one branch for each team member 
-	-   Each team member has at least four commits from the duration of the first segment 
+The database we are using is an Austin Housing Data csv from Kaggle. We chose this dataset because it was clean and has the features, we were looking for such as zip code, square footage, number of rooms, number of bathrooms and several others. Link to the dataset is below. https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data
 
-Note: The descriptions and explanations required in all other project deliverables should also be in your README.md as part of your outline, unless otherwise noted.
+The question we are trying to answer is can we determine the price of a house in Austin, Texas based on certain features of the property. We are also interested to see what features drive the price of the houses in Austin as well
 
 ### Machine Learning Model
 
-Team members present a provisional machine learning model that stands in for the final machine learning model and accomplishes the following:
--Takes in data in from the provisional database 
--Outputs label(s) for input data
+-   SciKitLearn is the ML library we'll be using to create a LinearRegression model. Our training and testing setup is using .7 percent of our data to train and .3 
+    to test. 
+
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/MachineLearning_Model_Image1.png)
+
+-   Takes in data in from the provisional database 
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/MachineLearning_Model_Image2.png)
+
+-  Heat Map for different features to see features that correlate
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/MachineLearning_Model_Image3_Heatmap.png)
+
+### Data Cleaning and Analysis
+-   Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
 
 ### Database 
-Team members present a provisional database that stands in for the final database and accomplishes the following: 
--Sample data that mimics the expected final database structure or schema 
--Draft machine learning module is connected to the provisional database 
+-   pgAdmin is the database we intend to use, and we will integrate Flask to display the data.
 
+### Dashboard:
+-   In addition to using a Flask template, we will also integrate D3.js for a fully functioning and interactive dashboard. It will be hosted on github. We will also 
+    use google slides to create a slide deck for our presentation.
 
-## Reason why we selected the topic
-Low inventory, fervid competition and massive price gains have battered buyers since covid pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges. The problem is that even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to come online or moving to a more affordable area. And there are many more who are hoping prices will drop—but that might not happen anytime soon.  
-
-And this gives us an opportunity to apply machine learning models to predict the prices of houses in the year 2023 based on the available features.
 
 ## Communication Protocols
     - Join Weekly class hours
