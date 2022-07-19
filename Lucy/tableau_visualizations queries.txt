@@ -1,0 +1,17 @@
+CREATE TABLE Tableau_Visualizations (
+	zpid INT NOT NULL,
+	city VARCHAR NOT NULL,
+	zipcode INT NOT NULL,
+	latitude VARCHAR NOT NULL,
+	longitude VARCHAR NOT NULL,
+	yearBuilt INT NOT NULL,
+	latestPrice BIGINT NOT NULL,
+	latest_salemonth INT NOT NULL,
+	lotSizeSqFt VARCHAR NOT NULL,
+	livingAreaSqFt INT NOT NULL,
+	avgSchoolRating VARCHAR NOT NULL,
+	numOfBathrooms VARCHAR NOT NULL,
+	numOfBedrooms INT NOT NULL
+);
+
+SELECT * FROM Tableau_Visualizations;
