@@ -62,24 +62,23 @@
                 <p>Enter the Features for Prediction</p>
                   <ul class = "list-group">
                     <li class = "list-group-item">
-                      <label for="date">Enter square footage</label>
+                      <label for="fsqft">Enter square footage</label>
                         <input type = "text" placeholder="3000" id ="sqft"/>
-                    </li>                       
+                    </li>                                 
                     <li class = "list-group-item">
-                      <label for="city">Enter number of bedrooms</label>
-                        <p><input type = "text" placeholder="4" id ="bed"/></p>                                
-                    </li>         
-                    <li class = "list-group-item">
-                      <label for="state"> Enter number of bathrooms</label>
-                        <p><input type = "text" placeholder="3" id ="bath"/></p>
-                    </li>   
-                    <li class = "list-group-item">
-                      <label for="country">Enter ISD rating</label>
+                      <label for="fisd">Enter ISD rating</label>
                         <p><input type = "text" placeholder="4" id ="isd"/></p>                                
                     </li>   
                     <li class = "list-group-item">
-                      <label for="shape">Enter zipcode</label>
-                        <p><input type = "text" placeholder="78660" id ="zip"/></p>
+                      <label for="fbath"> Enter number of bathrooms</label>
+                        <p><input type = "text" placeholder="3" id ="bath"/></p>
+                    </li> 
+                    <li class = "list-group-item">
+                      <button onclick = "server.call_prediction()">Predict the House Price</button>
+                    </li> 
+                    <li class = "list-group-item">
+                      <h3> Predicted House Price = </h3> <h3 id = "price"></h3>
+                      
                     </li>   
                   </ul>
               </form>

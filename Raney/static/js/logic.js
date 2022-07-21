@@ -11,7 +11,7 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
 	center: [30.267153, -97.7430608],
-	zoom: 10,
+	zoom: 9,
 	layers: [streets]
 });
 console.log("working");
