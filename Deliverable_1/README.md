@@ -1,12 +1,12 @@
 # Austin_TX_House_Listings
 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/AustinTXZillowImage.png)
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/AustinTXZillowImage.png)
 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/AusitinHosueImage.png)
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/AusitinHosueImage.png)
 
 With mortgage rates rising and housing prices continuing to climb, a new study finds Austin has the second most overpriced housing market.It found that based on historical trends, the average price of a home in Travis County in February 2022 should have been $347,775. Instead, the study found that the actual average price is $573,123. That’s 65% higher than where historical data shows they should be.The idea of this project is to do an in-depth analysis the Austin Housing Dataset through apprropriate Machine Learning models and predict the Austin house price for the year 2023.
 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/Austin_Historical_Trends.png)
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/Austin_Historical_Trends.png)
 
 ## Resources
 - Google search, https://www.kxan.com/news/local/study-austin-2nd-most-overpriced-housing-market-in-us/
@@ -31,20 +31,20 @@ The question we are trying to answer is can we determine the price of a house in
 -   SciKitLearn is the ML library we'll be using to create a LinearRegression model. Our training and testing setup is using .7 percent of our data to train and .3 
     to test. 
 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/MachineLearning_Model_Image1.png)
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/MachineLearning_Model_Image1.png)
 
 -   Takes in data in from the provisional database 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/MachineLearning_Model_Image2.png)
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/MachineLearning_Model_Image2.png)
 
 -  Heat Map for different features to see features that correlate
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/MachineLearning_Model_Image3_Heatmap.png)
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/MachineLearning_Model_Image3_Heatmap.png)
 
 ### Data Cleaning and Analysis
 -   Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
 
 ### Database 
 -   pgAdmin is the database we intend to use, and we will integrate Flask to display the data.
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/raneybranch/Deliverable_1/Resources/DatabaseStructure_Image1.png)
+![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/DatabaseStructure_Image1.png)
 
 ### Dashboard:
 -   In addition to using a Flask template, we will also integrate D3.js for a fully functioning and interactive dashboard. It will be hosted on github. We will also 
@@ -62,3 +62,9 @@ The question we are trying to answer is can we determine the price of a house in
     -   jayanbranch - Branch for Jayan  
     -   stephenbranch - Branch for Stephen
     -   raneybranch - Branch for Raney 
+
+## Segment 1 Role
+    -   Raney       - Square
+    -   Jayan       - Triangle
+    -   Lucy        - Circle
+    -   Stephen     - X
