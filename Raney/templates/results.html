@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Texas House Listings</title>
+    
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"/>
+
+  
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <link rel="stylesheet" href="static/css/resultstyle.css">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <a class = "navbar-brand">Machine Learning Model to Predict the House Prices</a>
+    </nav>
+    <div class="jumbotron"></div>      
+    <div class="container-fluid">
+      <div class="row">
+      <div class = "col-md-3">
+          <p><a href = "http://127.0.0.1:5000">Home</a></p>       
+          
+          <p>House Prediction Features</p>          
+          <p id = "sqftFeature">{{sqftMessage}}</p>
+          <p id = "isdFeature">{{isdMessage}}</p>
+          <p id = "bathFeature">{{bathMessage}}</p>         
+          <p id = "bathFeature">{{bathMessage}}</p>                 
+          <p id = "bathFeature">{{bathMessage}}</p>      
+          <p id = "bathFeature">{{bathMessage}}</p>       
+          <p id = "bathFeature">{{bathMessage}}</p>      
+          <p id = "bathFeature">{{bathMessage}}</p>       
+          <p id = "bathFeature">{{bathMessage}}</p>      
+          <p id = "bathFeature">{{bathMessage}}</p>       
+          <p id = "bathFeature">{{bathMessage}}</p>      
+          <p id = "bathFeature">{{bathMessage}}</p>       
+          <p id = "bathFeature">{{bathMessage}}</p>          
+          <p id = "price">{{priceMessage}}</p>
+
+        </div>
+       <div class="col-md-9">
+          <!-- The div that holds our map -->
+          <div id="mapid"> </div>  
+            <!-- Leaflet JavaScript -->
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+            <!-- API key -->
+            <script type="text/javascript" src="static/js/config.js"></script>
+            <!-- Our JavaScript -->
+            <script type="text/javascript" src="static/js/map.js"></script>                                                                   
+        </div>  
+      </div>
+    </div>
+</div>
+</body>
+</html>

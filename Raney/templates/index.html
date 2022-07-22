@@ -11,99 +11,77 @@
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous"/>
-
-  
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-
-    <!-- d3 JavaScript -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-
     <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body class="bg-dark"> 
-    <div class="wrapper">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-            <a class = "navbar-brand" href = "index.html">Machine Learning Model to Predict the House Prices</a>
-        </nav>
+<body>
+<div class="wrapper">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <a class = "navbar-brand">Machine Learning Model to Predict the House Prices</a>
+    </nav>
 
-        <div class="jumbotron">
-        </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class= "col-md-5">
-              <div id = "verbiage">
-                <p>With mortgage rates rising and housing prices continuing to climb, a new study finds Austin has the second most overpriced housing market.It found that based on historical trends, the average price of a home in Travis County in February 2022 should have been $347,775. Instead, the study found that the actual average price is $573,123. That’s 65% higher than where historical data shows they should be.The idea of this project is to do an in-depth analysis the Austin Housing Dataset through apprropriate Machine Learning models and predict the Austin house price for the year 2023.
-                  <br><br>Low inventory, fiery competition and massive price gains have battered buyers since covid pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges. The problem is that even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to come online or moving to a more affordable area. And there are many more who are hoping prices will drop—but that might not happen anytime soon.
-                  <br><br>And we chose Austin,Texas house listings as our topic, since we are interested to see if we could apply a machine learning model to such a robust market.
-                  <br><br>The question we are trying to answer is can we determine the price of a house in Austin, Texas based on certain features of the property. We are also interested to see what features drive the price of the houses in Austin as well
-                </p>
-              </div>
-            </div>
-           <div class="col-md-7">
-              <!-- The div that holds our map -->
-              <div id="mapid"> </div>  
-                <!-- Leaflet JavaScript -->
-                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-                integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-                <!-- API key -->
-                <script type="text/javascript" src="static/js/config.js"></script>
-                <!-- Our JavaScript -->
-                <script type="text/javascript" src="static/js/logic.js"></script>                                                       
-            </div>
-          </div>        
-        </div>    
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-3">
-              <form class = "bg-grey">
-                <p>Enter the Features for Prediction</p>
+    <div class="jumbotron">
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class= "col-md-2">
+          <div id = "contents">
+            <p>Contents
+              <ol> <a href = "https://github.com/raneymjohnGit/Austin_TX_House_Listings">GitHub Page </a></ol>
+              <ol> House Price Prediction </ol>                            
+              <form class = "bg-grey" action = "/results" method="post">
+                <ol><label>Enter the Features for Prediction</label></ol>
                   <ul class = "list-group">
                     <li class = "list-group-item">
-                      <label for="fsqft">Enter square footage</label>
-                        <input type = "text" placeholder="3000" id ="sqft"/>
+                      <label for="sqft">Enter square footage</label>
+                      <p><input type = "number" placeholder=2000 id ="sqft" name = "sqft"/></p>
                     </li>                                 
                     <li class = "list-group-item">
-                      <label for="fisd">Enter ISD rating</label>
-                        <p><input type = "text" placeholder="4" id ="isd"/></p>                                
+                      <label for="isd">Enter ISD rating</label>
+                        <p><input type = "number" placeholder=7 id ="isd" name = "isd"/></p>                                
                     </li>   
                     <li class = "list-group-item">
-                      <label for="fbath"> Enter number of bathrooms</label>
-                        <p><input type = "text" placeholder="3" id ="bath"/></p>
+                      <label for="bath"> Enter number of bathrooms</label>
+                        <p><input type = "number" placeholder=3 id ="bath" name = "bath"/></p>                    
                     </li> 
                     <li class = "list-group-item">
-                      <button onclick = "server.call_prediction()">Predict the House Price</button>
+                      <p><input type = "submit" value = "Predict the House Price"/></p>                                 
                     </li> 
-                    <li class = "list-group-item">
-                      <h3> Predicted House Price = </h3> <h3 id = "price"></h3>
-                      
-                    </li>   
                   </ul>
+                  <p id = "errMsg"> {{errorMessage}} </p> 
               </form>
-            </div>
-            <div class="col-md-9">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Sq.Feet</th>
-                    <th>BedRooms</th>
-                    <th>BathRooms</th>
-                    <th>ISD Rating</th>
-                    <th>Zipcode</th>
-                    <th>Address</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
+            </p>
           </div>
         </div>
 
+        <div class="col-md-1">
+        </div>
 
+        <div class="col-md-7" id ="trend">
+          <img src ="../static/images/Austin_Historical_Trends.png">
+        </div>
+                                               
+        <div class="col-md-2">
+        </div>
+      </div>        
+    </div>    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2" id = "emptyspace"></div>        
+        
+    <div class="col-md-10">
+      <div id = "verbiage">
+        <p>
+          <b>Austin Texas House Listings</b>
+        </p>
+        <p>With mortgage rates rising and housing prices continuing to climb, a new study finds Austin has the second most overpriced housing market.It found that based on historical trends, the average price of a home in Travis County in February 2022 should have been $347,775. Instead, the study found that the actual average price is $573,123. That’s 65% higher than where historical data shows they should be.The idea of this project is to do an in-depth analysis the Austin Housing Dataset through apprropriate Machine Learning models and predict the Austin house price for the year 2023.
+          <br><br>Low inventory, fiery competition and massive price gains have battered buyers since covid pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges. The problem is that even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to come online or moving to a more affordable area. And there are many more who are hoping prices will drop—but that might not happen anytime soon.
+          <br><br>And we chose Austin,Texas house listings as our topic, since we are interested to see if we could apply a machine learning model to such a robust market.
+          <br><br>The question we are trying to answer is can we determine the price of a house in Austin, Texas based on certain features of the property. We are also interested to see what features drive the price of the houses in Austin as well
+        </p>
+      </div>
     </div>
-  </body>
+      </div>
+    </div>    
+</div>
+</body>
 </html>
