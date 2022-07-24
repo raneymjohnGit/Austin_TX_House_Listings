@@ -37,8 +37,8 @@ def jsonify_data(filterCond):
 
 
     filtered_df =df.loc[(df["numOfBathrooms"] >= (numOfBathrooms - 1)) & (df["numOfBathrooms"] <= (numOfBathrooms + 1))]
-    filtered_df =filtered_df.loc[(filtered_df["livingAreaSqFt"] >= (livingAreaSqFt - 100)) & (filtered_df["livingAreaSqFt"] <= (livingAreaSqFt + 100))]
-    filtered_df =filtered_df.loc[(filtered_df["latestPrice"] >= (latestPrice - 50000)) & (filtered_df["livingAreaSqFt"] <= (latestPrice + 50000))]
+    filtered_df =filtered_df.loc[(filtered_df["livingAreaSqFt"] >= (livingAreaSqFt - 200)) & (filtered_df["livingAreaSqFt"] <= (livingAreaSqFt + 200))]
+    filtered_df =filtered_df.loc[(filtered_df["latestPrice"] >= (latestPrice - 50000)) & (filtered_df["latestPrice"] <= (latestPrice + 50000))]
     filtered_df =filtered_df.loc[(filtered_df["avgSchoolRating"] >= (avgSchoolRating - 0.5)) & (filtered_df["avgSchoolRating"] <= (avgSchoolRating + .5))]
     filtered_df["location"] = filtered_df[["latitude","longitude"]].values.tolist()
     columns = ["zpid","city","zipcode", "location","latestPrice", "numOfBathrooms", "livingAreaSqFt","streetAddress"]

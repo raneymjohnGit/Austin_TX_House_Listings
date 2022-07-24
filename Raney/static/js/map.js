@@ -42,7 +42,7 @@ fetch("static/js/dataset.js")
    	L.marker(house.location,
 				  {radius : 10,
 				  color: 'red' })
-   .bindPopup("<h2>" + "City = " + house.city + "<br>" + "zipcode = " + house.zipcode + "<br>" + "SqFt = " + house.livingAreaSqFt +  "<br>" + "No Of Baths = " + "<br>" + house.numOfBathrooms +  "<br>" +  "Address = " + house.streetAddress + "</h2> <hr> <h3> Price = " + house.latestPrice + "</h3>")
+   .bindPopup("<h5>" + "City: " + house.city + "<br>" + "Zipcode: " + house.zipcode + "<br>" + "SqFt: " + house.livingAreaSqFt +  "<br>" + "No Of Baths: " + house.numOfBathrooms +  "<br>" +  "Address: " + house.streetAddress + "</h5> <hr> <h4> Price: " + house.latestPrice + "</h4>")
    .addTo(map)
   });
 
