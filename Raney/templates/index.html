@@ -33,22 +33,25 @@
                   <ul class = "list-group">
                     <li class = "list-group-item">
                       <label for="sqft">Enter square footage</label>
-                      <p><input type = "number" placeholder=2000 id ="sqft" name = "sqft"/></p>
+                      <p><input type = "number" placeholder=2000 id ="sqft" name = "sqft"/>
+                      <p class = "errMsg" id = "errSqftMessage"> {{errorMessage.sqftMessage}} </p> 
                     </li>                                 
                     <li class = "list-group-item">
                       <label for="isd">Enter ISD rating</label>
-                        <p><input type = "number" placeholder=7 id ="isd" name = "isd"/></p>                                
+                        <p><input type = "number" placeholder=7 id ="isd" name = "isd"/></p>          
+                        <p class = "errMsg" id = "errisdMessage"> {{errorMessage.isdMessage}} </p>                       
                     </li>   
                     <li class = "list-group-item">
                       <label for="bath"> Enter number of bathrooms</label>
-                        <p><input type = "number" placeholder=3 id ="bath" name = "bath"/></p>                    
+                        <p><input type = "number" placeholder=3 id ="bath" name = "bath"/></p>             
+                        <p class = "errMsg"  id = "errbathMessage"> {{errorMessage.bathMessage}} </p>                    
                     </li> 
                     <li class = "list-group-item">
                       <p><input type = "submit" value = "Predict the House Price"/></p>                                 
                     </li> 
                   </ul>
-                  <p id = "errMsg"> {{errorMessage}} </p> 
-              </form>
+                  
+              </form>              
             </p>
           </div>
         </div>

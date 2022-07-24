@@ -35,20 +35,10 @@
           <p><a href = "http://127.0.0.1:5000">Home</a></p>       
           
           <p>House Prediction Features</p>          
-          <p id = "sqftFeature">{{sqftMessage}}</p>
-          <p id = "isdFeature">{{isdMessage}}</p>
-          <p id = "bathFeature">{{bathMessage}}</p>         
-          <p id = "bathFeature">{{bathMessage}}</p>                 
-          <p id = "bathFeature">{{bathMessage}}</p>      
-          <p id = "bathFeature">{{bathMessage}}</p>       
-          <p id = "bathFeature">{{bathMessage}}</p>      
-          <p id = "bathFeature">{{bathMessage}}</p>       
-          <p id = "bathFeature">{{bathMessage}}</p>      
-          <p id = "bathFeature">{{bathMessage}}</p>       
-          <p id = "bathFeature">{{bathMessage}}</p>      
-          <p id = "bathFeature">{{bathMessage}}</p>       
-          <p id = "bathFeature">{{bathMessage}}</p>          
-          <p id = "price">{{priceMessage}}</p>
+          <p id = "sqftFeature">{{featureMessage.sqftMessage}}</p>
+          <p id = "isdFeature">{{featureMessage.isdMessage}}</p>
+          <p id = "bathFeature">{{featureMessage.bathMessage}}</p>                  
+          <p id = "price">{{featureMessage.priceMessage}}</p>
 
         </div>
        <div class="col-md-9">
@@ -60,7 +50,8 @@
             <!-- API key -->
             <script type="text/javascript" src="static/js/config.js"></script>
             <!-- Our JavaScript -->
-            <script type="text/javascript" src="static/js/map.js"></script>                                                                   
+            <script type="text/javascript" src="static/js/map.js"></script>          
+            <script type="text/javascript" src="static/js/dataset.js"></script>                                                           
         </div>  
       </div>
     </div>
