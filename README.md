@@ -36,6 +36,15 @@ The question we are trying to answer is can we predict the price of a typical ho
 -  Heat Map for different features to see features that correlate
 ![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/MachineLearning_Model_Image3_Heatmap.png)
 
+- Explanation of Model
+
+We chose the Random Forest Regressor based on empirical experimentation with the accuracy of different models. Random forest is a supervised learning algorithm that uses an ensemble learning method for classification and regression
+
+We used the built-in feature selection function to determine feature importances and reduce the amount of input for the ideal model, and further reduced the number of features to only 5 for the purposes of creating a model for interactive prediction on our front end ('zipcode' - hot encoded, 'yearBuilt', 'lotSizeSqFt',
+       'livingAreaSqFt', 'avgSchoolRating').
+
+We further improved the model by performing a grid search for hyperparameters, reaching an coefficient of determination of about 73%. 
+
 ### Data Cleaning and Analysis
 -   Pandas and python were used to clean and analyze the data in google collab notebooks. See Cleaning Data for Machine Learning Model google collab notebook for a detailed, commented analysis. 
 
@@ -43,15 +52,16 @@ The question we are trying to answer is can we predict the price of a typical ho
 -   Data was explored with pandas, seaborn visualiations, tableau visualizations, and other python libraries. See Cleaning Data for Machine Learning Model google collab notebook for a detailed, commented analysis.  
 
 ### Database 
--   PostgreSQL is the database we are using. We will integrate Flask and JS to display the data on a front end. It currently contains seven tables. 
+-   PostgreSQL is the database we are using. We will integrate Flask and JS to display the data on a front end. It currently contains seven tables.
+
 ![Database Structure](Images/database_ERD.png)
 
 
 ### Dashboard:
 -   In addition to using a Flask template, we will also integrate D3.js for a fully functioning and interactive dashboard. It will allow a user to input features and receive a predicted price based on our machine learning model.
 -   Our front end will also incorporate a Tableau story and visualizations made with other methods. 
--   We will use google slides to create a slide deck for our class presentation
-    
+-   We will use google slides to create a slide deck for our class presentation 
+
 ![Front End](Images/front_end_show_houses.png)
 
 
