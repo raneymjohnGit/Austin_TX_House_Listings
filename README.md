@@ -64,6 +64,11 @@ We further improved the model by performing a grid search for hyperparameters, r
 
 ![Front End](Images/front_end_show_houses.png)
 
+## Google Slides Presentation 
+
+[Google Slides Presentation](https://docs.google.com/presentation/d/1qW7ySGBoWv22oxZI2QIVgwt6B0VDeACSnAcm5nQMxZI/edit?usp=sharing)
+
+![Google Slides Screenshot](Images/google_slides_presentation.png)
 
 ## Communication Protocols
 - Join Weekly class hours
