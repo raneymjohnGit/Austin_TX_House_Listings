@@ -36,6 +36,8 @@ The question we are trying to answer is can we predict the price of a typical ho
 -  Heat Map for different features to see features that correlate
 ![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/MachineLearning_Model_Image3_Heatmap.png)
 
+- Explanation of Model
+
 We chose the Random Forest Regressor based on empirical experimentation with the accuracy of different models. Random forest is a supervised learning algorithm that uses an ensemble learning method for classification and regression
 
 We used the built-in feature selection function to determine feature importances and reduce the amount of input for the ideal model, and further reduced the number of features to only 5 for the purposes of creating a model for interactive prediction on our front end ('zipcode' - hot encoded, 'yearBuilt', 'lotSizeSqFt',
