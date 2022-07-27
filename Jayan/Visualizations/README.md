@@ -19,9 +19,13 @@ Many aspects of the Austin Housing Market are right-skewed, with many outliers o
 # Location is highly correlated to sale price
 
 ## Zip Code
+
 ZIP Code vs. Sale Price (map)
+
 **map from Tableau**
+
 ZIP Code vs. Price per Square Foot (map)
+
 **map from Tableau**
 
 ## Latitude and Longitude
@@ -56,8 +60,10 @@ Similarly, there is a visually clear positive relationship between these variabl
 ## School Ratings Correlated to Price and Location
 
 School ratings are geographic (related to location) and also have a visually clear positive relationship to sale price.
+
 ![Average School Rating vs Sale Price](Images/avgSchoolRating_vs_SalePrice.png)
 
 School ratings vs. location (map)
+
 ![Average School Ratings Mapped](Images/avgschoolrating_mapped.png)
 
