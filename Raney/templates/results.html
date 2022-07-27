@@ -38,10 +38,13 @@
           <p>The question we are trying to answer is can we determine the price of a house in Austin, Texas based on certain features of the property. 
             <br>We are also interested to see what features drive the price of the houses in Austin as well </p>
              
-          <p id = "sqftFeature">{{featureMessage.sqftMessage}}</p>
-          <p id = "isdFeature">{{featureMessage.isdMessage}}</p>
-          <p id = "bathFeature">{{featureMessage.bathMessage}}</p>                  
-          <p id = "price">{{featureMessage.priceMessage}}</p>
+             
+            <p id = "zipcode">{{featureMessage.zipcode}}</p>
+            <p id = "yearBuilt">{{featureMessage.yearBuilt}}</p>
+            <p id = "lotSizeSqFt">{{featureMessage.lotSizeSqFt}}</p>                  
+            <p id = "livingAreaSqFt">{{featureMessage.livingAreaSqFt}}</p>
+            <p id = "avgSchoolRating">{{featureMessage.avgSchoolRating}}</p>
+            <p id = "price">{{featureMessage.priceMessage}}</p>
 
           <p><br> Also listing out few houses based on the features provided</p>
 
@@ -58,6 +61,41 @@
             <script type="text/javascript" src="static/js/map.js"></script>          
             <script type="text/javascript" src="static/js/dataset.js"></script>                                                           
         </div>  
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class = "col-md-3">
+
+          <p>House Listings</p>       
+          <p>Based on the selection below, we have the list of houses in Austin Area in the map and the table</p>
+          <p id = "selzipcode">{{selectionMessage.zipcode}}</p>
+          <p id = "selyearBuilt">{{selectionMessage.yearBuilt}}</p>
+          <p id = "sellotSizeSqFt">{{selectionMessage.lotSizeSqFt}}</p>                  
+          <p id = "sellivingAreaSqFt">{{selectionMessage.livingAreaSqFt}}</p>
+          <p id = "selavgSchoolRating">{{selectionMessage.avgSchoolRating}}</p>
+
+        </div>
+
+        <div class="col-md-9">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>City</th>
+                <th>ZipCode</th>
+                <th>Lot Size Square Feet</th>
+                <th>Living Area Square Feet</th>
+                <th>Average School Rating</th>
+                <th>Number of Baths</th>
+                <th>Address</th>
+                <th>Price</th>
+                <th>GPS Coordinates</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 </div>

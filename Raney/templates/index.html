@@ -32,20 +32,82 @@
                 <ol><label>Enter the Features for Prediction</label></ol>
                   <ul class = "list-group">
                     <li class = "list-group-item">
-                      <label for="sqft">Enter square footage</label>
-                      <p><input type = "number" placeholder=2000 id ="sqft" name = "sqft"/>
-                      <p class = "errMsg" id = "errSqftMessage"> {{errorMessage.sqftMessage}} </p> 
-                    </li>                                 
-                    <li class = "list-group-item">
-                      <label for="isd">Enter ISD rating</label>
-                        <p><input type = "number" placeholder=7 id ="isd" name = "isd"/></p>          
-                        <p class = "errMsg" id = "errisdMessage"> {{errorMessage.isdMessage}} </p>                       
+                      <label for="zipcode">Zipcode</label>
+                        <select name="zipcode" id="zipcode">
+                            <option value="78617">78617</option>
+                            <option value="78660">78660</option>
+                            <option value="78702">78702</option>
+                            <option value="78703">78703</option>
+                            <option value="78704">78704</option>
+                            <option value="78705">78705</option>
+                            <option value="78717">78717</option>
+                            <option value="78721">78721</option>
+                            <option value="78722">78722</option>
+                            <option value="78723">78723</option>
+                            <option value="78724">78724</option>
+                            <option value="78725">78725</option>
+                            <option value="78726">78726</option>
+                            <option value="78727">78727</option>
+                            <option value="78728">78728</option>
+                            <option value="78729">78729</option>
+                            <option value="78730">78730</option>
+                            <option value="78731">78731</option>
+                            <option value="78732">78732</option>
+                            <option value="78733">78733</option>
+                            <option value="78735">78735</option>
+                            <option value="78736">78736</option>
+                            <option value="78737">78737</option>
+                            <option value="78739">78739</option>
+                            <option value="78741">78741</option>
+                            <option value="78744">78744</option>
+                            <option value="78745">78745</option>
+                            <option value="78746">78746</option>
+                            <option value="78747">78747</option>
+                            <option value="78748">78748</option>
+                            <option value="78749">78749</option>
+                            <option value="78750">78750</option>
+                            <option value="78751">78751</option>
+                            <option value="78752">78752</option>
+                            <option value="78753">78753</option>
+                            <option value="78754">78754</option>
+                            <option value="78756">78756</option>
+                            <option value="78757">78757</option>
+                            <option value="78758">78758</option>
+                            <option value="78759">78759</option>
+                        </select>
+                      <p class = "errMsg" id = "errzipcodeMessage"> {{errorMessage.zipcode}} </p> 
                     </li>   
                     <li class = "list-group-item">
-                      <label for="bath"> Enter number of bathrooms</label>
-                        <p><input type = "number" placeholder=3 id ="bath" name = "bath"/></p>             
-                        <p class = "errMsg"  id = "errbathMessage"> {{errorMessage.bathMessage}} </p>                    
-                    </li> 
+                      <label for="yearBuilt">Year Built</label>
+                      <p><input type = "number" placeholder=2000 id ="yearBuilt" name = "yearBuilt"/>
+                      <p class = "errMsg" id = "erryearBuiltMessage"> {{errorMessage.yearBuilt}} </p> 
+                    </li>  
+                    <li class = "list-group-item">
+                      <label for="lotSizeSqFt">Enter Lot Size Square Feet</label>
+                      <p><input type = "number" placeholder=10000 id ="lotSizeSqFt" name = "lotSizeSqFt"/>
+                      <p class = "errMsg" id = "errlotSizeSqFtMessage"> {{errorMessage.lotSizeSqFt}} </p> 
+                    </li>   
+                    <li class = "list-group-item">
+                      <label for="livingAreaSqFt">Enter Living Area Square Feet</label>
+                      <p><input type = "number" placeholder=3000 id ="livingAreaSqFt" name = "livingAreaSqFt"/>
+                      <p class = "errMsg" id = "errlivingAreaSqFtMessage"> {{errorMessage.livingAreaSqFt}} </p> 
+                    </li>                                 
+                    <li class = "list-group-item">
+                      <label for="avgSchoolRating">Enter Average School Rating</label>
+                        <select name="avgSchoolRating" id="avgSchoolRating">
+                          <option value=1>1</option>
+                          <option value=2>2</option>
+                          <option value=3>3</option>
+                          <option value=4>4</option>
+                          <option value=5>5</option>
+                          <option value=6>6</option>
+                          <option value=7>7</option>
+                          <option value=8>8</option>
+                          <option value=9>9</option>
+                          <option value=10>10</option>
+                        </select>       
+                        <p class = "errMsg" id = "avgSchoolRatingMessage"> {{errorMessage.avgSchoolRating}} </p>                       
+                    </li>   
                     <li class = "list-group-item">
                       <p><input type = "submit" value = "Predict the House Price"/></p>                                 
                     </li> 

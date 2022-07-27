@@ -36,13 +36,27 @@ fetch("static/js/dataset.js")
 	"Satellite": satelliteStreets
   };
 
+  	var tbody = d3.select("tbody");
+	tbody.html("");
+
 	// Loop through the cities array and create one marker for each city.
 	houseData.forEach(function(house) {
 	console.log(house)
+	let row = tbody.append("tr");
+
+    // Loop through each field in the dataRow and add
+    // each value as a table cell (td)
+    Object.values(house).forEach((val) => {
+      let cell = row.append("td");
+      cell.text(val);
+    });
+
+	// get table references
+	
    	L.marker(house.location,
 				  {radius : 10,
 				  color: 'red' })
-   .bindPopup("<h5>" + "City: " + house.city + "<br>" + "Zipcode: " + house.zipcode + "<br>" + "SqFt: " + house.livingAreaSqFt +  "<br>" + "No Of Baths: " + house.numOfBathrooms +  "<br>" +  "Address: " + house.streetAddress + "</h5> <hr> <h4> Price: " + house.latestPrice + "</h4>")
+   .bindPopup("<h5>" + "City: " + house.city + "<br>" + "Zipcode: " + house.zipcode + "<br>" + "Lot Size SqFt: " + house.lotSizeSqFt +  "<br>" + "Living Area SqFt: " + house.livingAreaSqFt + "<br>" + "Average School Rating: " + house.avgSchoolRating +  "<br>" + "No Of Baths: " + house.numOfBathrooms +  "<br>" +  "Address: " + house.streetAddress + "</h5> <hr> <h4> Price: " + house.latestprice + "</h4>")
    .addTo(map)
   });
 
