@@ -1,38 +1,33 @@
-# Austin_TX_House_Listings
+# Exploring and Predicting 2018-2021 House Prices in Austin, TX. 
 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/AustinTXZillowImage.png)
+# Background
+Austin has among the most overpriced and competitive housing markets in the nation. As of July 2022, research suggests it is the second second most overpriced housing market, with a 69.20% premium relative to its long-term pricing trend. Paralleling nationwide trends in urban areas, migration to the city, low mortgage rates, and low housing supplies are fueling a booming housing market, though there are signs suggesting cooling in the latter half of 2022. Subjectively, buying a house is reportedly extremely difficult, with seller's receiving multiple offers over asking price immediately after listing a property.
 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/AusitinHosueImage.png)
-
-A new study found Austin, Texas has the second most overpriced housing market due to mortgage rates rising and housing prices continuing to climb. The study found that based on historical trends, the average price of a home in Travis County in February 2022 should have been $347,775. Instead, the study found that the actual average price is $573,123. That’s 65% higher than what historical data predicts them to be. The purpose of this project was to do an in-depth analysis of Austin house sales data and to determine if there are any interesting relationships within the data. We applied a machine learning model to predict the price of a typical house in Austin, TX based on available information up to December 2019. 
-
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/Austin_Historical_Trends.png)
-
-## Resources
-- Google search, https://www.kxan.com/news/local/study-austin-2nd-most-overpriced-housing-market-in-us/
-- Kaggle Data set for Data https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data?select=austinHousingData.csv
+# Purpose
+The purpose of this project was to do an in-depth exploratory analysis of Austin house sales data to 1) identify which home characteristics determine price 2) discover meaningful insights about relationships between the variables in a sale 4) apply a machine learning model to predict the price of a typical house in Austin, TX. 
 
 ## Objective:
--   To build a Machine Learning Model that predicts house prices in Austin based on features currently driving the housing market.
+1) identify which home characteristics determine price 
+2) discover meaningful insights about relationships between the variables in a sale 
+3) apply a machine learning model to predict the price of a typical house in Austin, TX. 
 
 ### Topic Motivation
-Low inventory, fiery competition and massive price gains have battered buyers since the COVID pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges. Even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to become available or are moving to a more affordable area. Many potential homebuyers are hoping prices will drop — but that might not happen anytime soon.  
-
-We chose Austin, TX as our location because most of our group lives here and we are interested in seeing if we could apply a machine learning model to such a robust market.
+As discussed in the background section, Austin, TX has an incredibly competitive housing market, fueled by low inventory and increasing demand from migration. Buyers faced additional challenges as mortgage rates began to increase in the latter half of 2021. For aspiring homeowners, the experience of trying purchase a house is harrowing, with listings receiving multiple offers over asking price almost immediately. Austin is also the home of three of our group members, two of whom are hoping to buy a home in the next five years. These exciting changes in the marekt make it an attractive target for exploratory data analysis and to practice our skills by applying a machine learning model to predict house price. 
 
 ### Data Source
-The dataset we are using is an Austin Housing Data csv from Kaggle. We chose this dataset because it is extensive and has the features we were looking for such as zip code, square footage, number of rooms, and number of bathrooms, among others. House sales are not public record in Texas, so extensive datasets are difficult to access. This dataset was originally scraped from Zillow using a third party API. Link to the dataset is below:
-https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data?select=austinHousingData.csv
+The "Austin Housing Data" dataset we are using is sourced from Kaggle, and was originaly scraped from Zillow using a third party API by Eric Pierce. We chose this dataset because it is extensive (over 15,000 data points), covers several years of interest (2018 - 2021), and has a broad set of house characteristics concerning location, size, rooms, school information, and more. House sales are not public record in Texas, so extensive datasets are difficult to access. In addition, other analyses of this dataset are publicly available, which provides some context for our project. Link to the dataset is below: https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data?select=austinHousingData.csv
 
 ### Focus Questions
-The question we are trying to answer is can we predict the price of a typical house in Austin, Texas by inputing certain criteria into our predictor. We are also curious what features of a house drive the price and what other interesting relationships between features and price there are that we might not have realized.
+1) Can we predict the price of a house in Austin under December 2019 market conditions using a machine learning model?
+2) Which features drive the price of houses in Austin?
+3) What other meaningful relationships between variables can be discovered in this dataset?
 
 ### Machine Learning Model
--   Scikit-learn is the python library we'll be using to create our Random Forest Regressor model. Our training and testing setup is using .7 percent of our data to train and .3 to test. 
+-   Scikit-learn is the python library we'll be using to create our models. Our training and testing setup is using .7 percent of our data to train and .3 to test. 
 ![Random Forest Regressor](Images/random_forest_regressor.png)
 
--   Takes in data from the provisional database 
-![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/MachineLearning_Model_Image2.png)
+-   Takes in static data from the database.
+![Database Connection](Images/database_connection.png)
 
 -  Heat Map for different features to see features that correlate
 ![image_name](https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Deliverable_1/Resources/MachineLearning_Model_Image3_Heatmap.png)
@@ -63,6 +58,9 @@ We continued to improve the model by performing a grid search for hyperparameter
 -   We will use google slides to create a slide deck for our class presentation. 
 
 ![Front End](Images/front_end_show_houses.png)
+
+## Resources
+- Kaggle Data set for Data https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data?select=austinHousingData.csv
 
 ## Google Slides Presentation 
 
