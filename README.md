@@ -70,10 +70,6 @@ We further improved the model by performing a grid search for hyperparameters, r
 
 ![Google Slides Screenshot](Images/google_slides_presentation.png)
 
-## Communication Protocols
-- Join Weekly class hours
-- Join Office class hours
-- Connecting via Slack  
 
 ## Branches
 -   main        - main branch
