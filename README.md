@@ -141,7 +141,6 @@ XGboost proved to be slightly better than our best Random Forest Regressor model
 -   The front end allows a user to input variables and receive a prediction based on our machine learning model.
 ![Front End](Images/front_end_predict.png)
 -   Our front end also incorporates a tableau story with the most important visualizations from our exploratory data analysis.
-
 ![Front End](Images/front_end_tableau.png)
 
 # Resources
