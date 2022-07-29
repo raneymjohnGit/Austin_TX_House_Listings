@@ -29,7 +29,7 @@ We used an "AustinHousingdata" dataset sourced from Kaggle which was originally 
 -   The database we are using is PostgreSQL. Currently, our database contains seven tables. We will integrate Flask and JavaScript to display the data on the front end. 
 
 <p align="center" width="100%">
-    ![Database Structure](Images/database_ERD.png)
+    <img width="50%" src="Images/database_ERD">
 </p>
 
 
