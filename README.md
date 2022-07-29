@@ -34,7 +34,7 @@ We used a "AustinHousingdata" dataset sourced from Kaggle, originally scraped fr
 
 
 # Data Cleaning and Analysis
--   Python and pandas were used to clean and analyze the data in google colab notebooks. See the [Cleaning Data for Machine Learning Model] (Jayan/Analysis/Cleaning_Data_for_Machine_Learning_Model.ipynb) google colab notebook for a detailed and commented analysis.
+-   Python and pandas were used to clean and analyze the data in google colab notebooks. See the [Cleaning Data for Machine Learning Model](Jayan/Analysis/Cleaning_Data_for_Machine_Learning_Model.ipynb) google colab notebook for a detailed and commented analysis.
     - The distribution of variables was examined, including many with right-skew.
     - Poor data was identified and removed, corrected, or imputed.
     - For variables with extreme outliers, datapoints were removed. We wanted to focus on training a model that could accurately predict the price of a typical Austin house, which justified our choice of removing data points the skew the data excessively.
