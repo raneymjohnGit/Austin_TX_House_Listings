@@ -1,4 +1,4 @@
-# Exploring and Predicting 2019 House Prices in Austin, TX
+Austin Texas 
 
 ![Austin TX Houses](Images/houses.png)
 
@@ -28,7 +28,10 @@ We used an "AustinHousingdata" dataset sourced from Kaggle which was originally 
 ## Database 
 -   The database we are using is PostgreSQL. Currently, our database contains seven tables. We will integrate Flask and JavaScript to display the data on the front end. 
 
-![Database Structure](Images/database_ERD.png)
+<p align="center" width="100%">
+    ![Database Structure](Images/database_ERD.png)
+</p>
+
 
 ## Data Cleaning and Analysis
 -   Python and pandas were used to clean and analyze the data in google colab notebooks. See the [Cleaning Data for Machine Learning Model] (Jayan/Analysis/Cleaning_Data_for_Machine_Learning_Model.ipynb) google colab notebook for a detailed and commented analysis.
