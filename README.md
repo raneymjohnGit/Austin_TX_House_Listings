@@ -3,7 +3,7 @@
 ![Austin TX Houses](Images/top_banner.png)
 
 # Background
-Austin has among the most overpriced and competitive housing markets in the nation. As of July 2022, research suggests it is the second second most overpriced housing market, with a 69.20% premium relative to its long-term pricing trend. Paralleling nationwide trends in urban areas, migration to the city, low mortgage rates, and low housing supplies are fueling a booming housing market, though there are signs suggesting cooling in the latter half of 2022. Subjectively, buying a house is reportedly extremely difficult - sellers often receive multiple offers over asking price immediately after listing a property.
+Austin has among the most overpriced and competitive housing markets in the nation. As of July 2022, [research](https://business.fau.edu/executive-education/housing-market-ranking/housing-top-100/index.php) suggests it is the second most overpriced housing market, with a 69.20% premium relative to its long-term pricing trend. Paralleling nationwide trends in urban areas, migration to the city, low mortgage rates, and low housing supplies are fueling a booming housing market, though there are signs suggesting cooling in the latter half of 2022. Subjectively, buying a house is reportedly extremely difficult - sellers often receive multiple offers over asking price immediately after listing a property.
 
 # Purpose
 The purpose of this project was to do an in-depth exploratory analysis of Austin house sales data to 1) identify which home characteristics determine price 2) discover meaningful insights about relationships between the variables in a sale 3) apply a machine learning model to predict the price of a typical house in Austin, TX. 
@@ -50,7 +50,7 @@ We used a "AustinHousingdata" dataset sourced from Kaggle, originally scraped fr
     - Many characteristics of sold houses in Austin, like sale price and living area, are right-skewed, with many outliers on the high-end. This parallels the right skew of the distribution of household income.
     - Location is highly correlated to sale price. Zipcode, latitude, longitude, and distance from the city center all affect price in geographically recognizable patterns. 
     - Unsurprisingly, the size of the living area and the lot of a house are both strongly positively correlated to price.
-    - School ratings have a recognizable geographic patterna and is strongly positively correlated to price.    
+    - School ratings have a recognizable geographic pattern and are strongly positively correlated to price.    
 
 # Machine Learning Model
 
