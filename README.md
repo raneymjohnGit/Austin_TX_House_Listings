@@ -28,6 +28,8 @@ We used an "AustinHousingdata" dataset sourced from Kaggle which was originally 
 ## Database 
 -   The database we are using is PostgreSQL. Currently, our database contains seven tables. We will integrate Flask and JavaScript to display the data on the front end. 
 
+![Database Structure](Images/database_ERD.png)
+
 ## Data Cleaning and Analysis
 -   Python and pandas were used to clean and analyze the data in google colab notebooks. See the [Cleaning Data for Machine Learning Model] (Jayan/Analysis/Cleaning_Data_for_Machine_Learning_Model.ipynb) google colab notebook for a detailed and commented analysis.
     - The distribution of variables was examined, including many with right-skew.
@@ -46,8 +48,6 @@ We used an "AustinHousingdata" dataset sourced from Kaggle which was originally 
     - Location is highly correlated to sale price. Zipcode, latitude, longitude, and distance from the city center all affect price in geographically recognizable patterns. 
     - Unsurprisingly, the size of the living area and the lot of a house are both strongly positively correlated to price.
     - School ratings have a recognizable geographic patterna and is strongly positively correlated to price.    
-
-![Database Structure](Images/database_ERD.png)
 
 ## Machine Learning Model
 
