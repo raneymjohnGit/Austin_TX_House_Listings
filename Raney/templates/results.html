@@ -35,8 +35,8 @@
           <p><a href = "http://127.0.0.1:5000">Home</a></p>       
           
           <p>House Prediction Features</p>       
-          <p>The question we are trying to answer is can we determine the price of a house in Austin, Texas based on certain features of the property. 
-            <br>We are also interested to see what features drive the price of the houses in Austin as well </p>
+          <p>We trained a random forest regressor model to estimate the price of typical Austin house under December 2019 market conditions. 
+            <br>See your predicted price below: </p>
              
              
             <p id = "zipcode">{{featureMessage.zipcode}}</p>
@@ -46,7 +46,6 @@
             <p id = "avgSchoolRating">{{featureMessage.avgSchoolRating}}</p>
             <p id = "price">{{featureMessage.priceMessage}}</p>
 
-          <p><br> Also listing out few houses based on the features provided</p>
 
         </div>
        <div class="col-md-9">
@@ -66,9 +65,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class = "col-md-3">
-
-          <p>House Listings</p>       
-          <p>Based on the selection below, we have the list of houses in Austin Area in the map and the table</p>
+   
+          <p>Based on the features you provided, comparable houses are displayed on the map to the right, with their details in the table.</p>
           <p id = "selzipcode">{{selectionMessage.zipcode}}</p>
           <p id = "selyearBuilt">{{selectionMessage.yearBuilt}}</p>
           <p id = "sellotSizeSqFt">{{selectionMessage.lotSizeSqFt}}</p>                  
@@ -86,6 +84,7 @@
                 <th>Lot Size Square Feet</th>
                 <th>Living Area Square Feet</th>
                 <th>Average School Rating</th>
+                <th>Number of Beds</th>
                 <th>Number of Baths</th>
                 <th>Address</th>
                 <th>Price</th>

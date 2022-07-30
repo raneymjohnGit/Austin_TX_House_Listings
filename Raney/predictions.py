@@ -4,6 +4,7 @@ from sqlalchemy.engine.create import create_engine
 import sklearn
 
 def predict_houseprice (featureValues):
+    #load the model
     model = joblib.load("rf_front_end_final-model_jlib")
     print('The scikit-learn version is {}.'.format(sklearn.__version__))
     
@@ -13,7 +14,7 @@ def predict_houseprice (featureValues):
     livingAreaSqFt = featureValues["livingAreaSqFt"]
     avgSchoolRating = featureValues["avgSchoolRating"]
     
-    
+    #get the predictions from the model
     predictions = model.predict([[zipcode, yearBuilt, lotsizeSqFt,livingAreaSqFt,avgSchoolRating]])
     return int(predictions[0])
 
@@ -39,15 +40,30 @@ def jsonify_data(featureValues):
     lotsizeSqFt = int(featureValues["lotSizeSqFt"])
     livingAreaSqFt = int(featureValues["livingAreaSqFt"])
     avgSchoolRating = int(featureValues["avgSchoolRating"])
-    #latestprice = featureValues["latestprice"]
 
+
+    # Filter the dat frame based on zipcode.
     filtered_df = df[df["zipcode"] == zipcode]
+
+    # Filter the dat frame based on Year built range.
     filtered_df = filtered_df.loc[(df["yearBuilt"] >= (yearBuilt - 5)) & (df["yearBuilt"] <= (yearBuilt + 5))]
+    
+    # Filter the dat frame based on Lot Size Square Feet range.
     filtered_df =filtered_df.loc[(filtered_df["lotSizeSqFt"] >= (lotsizeSqFt - 2000)) & (filtered_df["lotSizeSqFt"] <= (lotsizeSqFt + 2000))]
+    
+    # Filter the dat frame based on Living Area Square Feet range.
     filtered_df =filtered_df.loc[(filtered_df["livingAreaSqFt"] >= (livingAreaSqFt - 200)) & (filtered_df["livingAreaSqFt"] <= (livingAreaSqFt + 200))]
-    #filtered_df =filtered_df.loc[(filtered_df["latestprice"] >= (latestprice - 50000)) & (filtered_df["latestprice"] <= (latestprice + 50000))]
+    
+    # Filter the dat frame based on School Rating range.
     filtered_df =filtered_df.loc[(filtered_df["avgSchoolRating"] >= (avgSchoolRating - 1)) & (filtered_df["avgSchoolRating"] <= (avgSchoolRating + 1))]
+    
+    #Combine the Lattitudes and longitudes in one single column for geomapping
     filtered_df["location"] = filtered_df[["latitude","longitude"]].values.tolist()
-    columns = ["city","zipcode","lotSizeSqFt","livingAreaSqFt","avgSchoolRating","numOfBathrooms","streetAddress", "latestprice","location"]
+    
+    #Selected columns
+    columns = ["city","zipcode","lotSizeSqFt","livingAreaSqFt","avgSchoolRating","numOfBedrooms","numOfBathrooms","streetAddress", "latestprice","location"]
+    
     filtered_df = filtered_df[columns]    
+    
+    #Create the JSON file for JS to use
     filtered_df.to_json('C:/Users/raney/OneDrive/Desktop/Analysis_Projects/Austin_TX_House_Listings/Raney/static/js/dataset.js', orient = 'records')

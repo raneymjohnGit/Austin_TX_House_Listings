@@ -56,7 +56,7 @@ fetch("static/js/dataset.js")
    	L.marker(house.location,
 				  {radius : 10,
 				  color: 'red' })
-   .bindPopup("<h5>" + "City: " + house.city + "<br>" + "Zipcode: " + house.zipcode + "<br>" + "Lot Size SqFt: " + house.lotSizeSqFt +  "<br>" + "Living Area SqFt: " + house.livingAreaSqFt + "<br>" + "Average School Rating: " + house.avgSchoolRating +  "<br>" + "No Of Baths: " + house.numOfBathrooms +  "<br>" +  "Address: " + house.streetAddress + "</h5> <hr> <h4> Price: " + house.latestprice + "</h4>")
+   .bindPopup("<h5>" + "City: " + house.city + "<br>" + "Zipcode: " + house.zipcode + "<br>" + "Lot Size SqFt: " + house.lotSizeSqFt +  "<br>" + "Living Area SqFt: " + house.livingAreaSqFt + "<br>" + "No Of Beds: " + house.numOfBedrooms + "<br>" + "No Of Baths: " + house.numOfBathrooms + "<br>" + "Average School Rating: " + house.avgSchoolRating +   "<br>" +  "Address: " + house.streetAddress + "</h5> <hr> <h4> Price: " + house.latestprice + "</h4>")
    .addTo(map)
   });
 

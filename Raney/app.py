@@ -101,9 +101,6 @@ def submit():
             featureMessage["priceMessage"] = "Predicted Price = " + '${:,.2f}'.format(price)
             print(featureMessage["priceMessage"])
 
-            #featureValues["latestprice"] = price
-
-
             predictions.jsonify_data(featureValues)
 
             return render_template('results.html', featureMessage = featureMessage,selectionMessage = selectionMessage)
