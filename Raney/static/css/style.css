@@ -1,0 +1,27 @@
+body {
+  height: 100%;
+  color: #f0ecec;
+  background-color: white;
+  }
+.jumbotron {
+   background-image: url("../images/AusitinHosueImage.png");
+   background-size: 25% 100%;
+   text-align: center;
+}
+
+html,
+body,
+
+#verbiage {
+  background-color: white;
+  color: black;
+}
+#contents {
+  background-color: white;
+  color: black;
+}
+
+.errMsg{
+  background-color: white;
+  color: red;
+}
