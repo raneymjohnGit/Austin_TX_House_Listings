@@ -6,171 +6,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Austin Texas House Listings</title>
     
-    <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous"/>
-    <link rel="stylesheet" href="static/css/style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<div class="wrapper">
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-        <a class = "navbar-brand">Machine Learning Model to Predict the House Prices</a>
-    </nav>
+  <style>
+    .carousel-item{
+        height:32rem;
+        background: #777;
+        color: white;
+        position : relative;
+        background-position: center;
+        background-size: size;
+      }
+    .container {
+        position: absolute;
+        bottom: 0;
+        left:0;
+        right:0;
+        padding-bottom: 50px;
+      }
+    .overlay-image{
+      position: absolute;
+        bottom: 0;
+        left:0;
+        right:0;
+        top:0;
+        background-position: center;
+        background-size: cover;
 
-    <div class="jumbotron">
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class= "col-md-2">
-          <div id = "contents">
-            <p>Contents
-              <ol> <a href = "https://github.com/raneymjohnGit/Austin_TX_House_Listings">GitHub Page </a></ol>
-              <ol> House Price Prediction </ol>                            
-              <form class = "bg-grey" action = "/results" method="post">
-                <ol><label>Enter the Features for Prediction</label></ol>
-                  <ul class = "list-group">
-                    <li class = "list-group-item">
-                      <label for="zipcode">Zipcode</label>
-                        <select name="zipcode" id="zipcode">
-                            <option value="78617">78617</option>
-                            <option value="78660">78660</option>
-                            <option value="78702">78702</option>
-                            <option value="78703">78703</option>
-                            <option value="78704">78704</option>
-                            <option value="78705">78705</option>
-                            <option value="78717">78717</option>
-                            <option value="78721">78721</option>
-                            <option value="78722">78722</option>
-                            <option value="78723">78723</option>
-                            <option value="78724">78724</option>
-                            <option value="78725">78725</option>
-                            <option value="78726">78726</option>
-                            <option value="78727">78727</option>
-                            <option value="78728">78728</option>
-                            <option value="78729">78729</option>
-                            <option value="78730">78730</option>
-                            <option value="78731">78731</option>
-                            <option value="78732">78732</option>
-                            <option value="78733">78733</option>
-                            <option value="78735">78735</option>
-                            <option value="78736">78736</option>
-                            <option value="78737">78737</option>
-                            <option value="78739">78739</option>
-                            <option value="78741">78741</option>
-                            <option value="78744">78744</option>
-                            <option value="78745">78745</option>
-                            <option value="78746">78746</option>
-                            <option value="78747">78747</option>
-                            <option value="78748">78748</option>
-                            <option value="78749">78749</option>
-                            <option value="78750">78750</option>
-                            <option value="78751">78751</option>
-                            <option value="78752">78752</option>
-                            <option value="78753">78753</option>
-                            <option value="78754">78754</option>
-                            <option value="78756">78756</option>
-                            <option value="78757">78757</option>
-                            <option value="78758">78758</option>
-                            <option value="78759">78759</option>
-                        </select>
-                      <p class = "errMsg" id = "errzipcodeMessage"> {{errorMessage.zipcode}} </p> 
-                    </li>   
-                    <li class = "list-group-item">
-                      <label for="yearBuilt">Year Built</label>
-                      <p><input type = "number" placeholder=2000 id ="yearBuilt" name = "yearBuilt"/>
-                      <p class = "errMsg" id = "erryearBuiltMessage"> {{errorMessage.yearBuilt}} </p> 
-                    </li>  
-                    <li class = "list-group-item">
-                      <label for="lotSizeSqFt">Enter Lot Size Square Feet</label>
-                      <p><input type = "number" placeholder=10000 id ="lotSizeSqFt" name = "lotSizeSqFt"/>
-                      <p class = "errMsg" id = "errlotSizeSqFtMessage"> {{errorMessage.lotSizeSqFt}} </p> 
-                    </li>   
-                    <li class = "list-group-item">
-                      <label for="livingAreaSqFt">Enter Living Area Square Feet</label>
-                      <p><input type = "number" placeholder=3000 id ="livingAreaSqFt" name = "livingAreaSqFt"/>
-                      <p class = "errMsg" id = "errlivingAreaSqFtMessage"> {{errorMessage.livingAreaSqFt}} </p> 
-                    </li>                                 
-                    <li class = "list-group-item">
-                      <label for="avgSchoolRating">Enter Average School Rating</label>
-                        <select name="avgSchoolRating" id="avgSchoolRating">
-                          <option value=1>1</option>
-                          <option value=2>2</option>
-                          <option value=3>3</option>
-                          <option value=4>4</option>
-                          <option value=5>5</option>
-                          <option value=6>6</option>
-                          <option value=7>7</option>
-                          <option value=8>8</option>
-                          <option value=9>9</option>
-                          <option value=10>10</option>
-                        </select>       
-                        <p class = "errMsg" id = "avgSchoolRatingMessage"> {{errorMessage.avgSchoolRating}} </p>                       
-                    </li>   
-                    <li class = "list-group-item">
-                      <p><input type = "submit" value = "Predict the House Price"/></p>                                 
-                    </li> 
-                  </ul>
-                  
-              </form>              
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-1">
-        </div>
-
-        <div class="col-md-7" id ="trend">
-          <div class='tableauPlaceholder' id='viz1659199872874' style='position: relative'>
-            <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XJ&#47;XJW64RG3W&#47;1_rss.png' style='border: none' /></a>
-            </noscript>
-            <object class='tableauViz'  style='display:none;'>
-              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-              <param name='embed_code_version' value='3' /> 
-              <param name='path' value='shared&#47;XJW64RG3W' /> 
-              <param name='toolbar' value='yes' />
-              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XJ&#47;XJW64RG3W&#47;1.png' /> 
-              <param name='animate_transition' value='yes' />
-              <param name='display_static_image' value='yes' />
-              <param name='display_spinner' value='yes' />
-              <param name='display_overlay' value='yes' />
-              <param name='display_count' value='yes' />
-              <param name='language' value='en-US' />
-            </object>
-          </div>                
-          <script type='text/javascript'>                    
-            var divElement = document.getElementById('viz1659199872874');                    
-            var vizElement = divElement.getElementsByTagName('object')[0];                    
-            vizElement.style.width='1169px';vizElement.style.height='1704px';                    
-            var scriptElement = document.createElement('script');                    
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-          </script>
-        </div>
-                                               
-        <div class="col-md-2">
-        </div>
-      </div>        
-    </div>    
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-2" id = "emptyspace"></div>        
+    }            
+  </style>
+  <div id = "myCarousel" class = "carousel slide  carousel-fade" 
+    data-bs-ride = "carousel">
+      <ol class ="carousel-indicators">
+        <li data-bs-target = "#myCarousel" 
+            data-bs-slide-to ="0" class = "active"></li>
+        <li data-bs-target = "#myCarousel" 
+            data-bs-slide-to ="1"></li>
+        <li data-bs-target = "#myCarousel" 
+            data-bs-slide-to ="2"></li>
+      </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval = "4000">
         
-    <div class="col-md-10">
-      <div id = "verbiage">
-        <p>
-          <b>Austin Texas House Listings</b>
-        </p>
-        <p>With mortgage rates rising and housing prices continuing to climb, a new study finds Austin has the second most overpriced housing market.It found that based on historical trends, the average price of a home in Travis County in February 2022 should have been $347,775. Instead, the study found that the actual average price is $573,123. That’s 65% higher than where historical data shows they should be.The idea of this project is to do an in-depth analysis the Austin Housing Dataset through apprropriate Machine Learning models and predict the Austin house price for the year 2023.
-          <br><br>Low inventory, fiery competition and massive price gains have battered buyers since covid pandemic, but now rapidly rising mortgage rates are making it even harder to purchase an affordable home. For many buyers, higher mortgage rates mean they can no longer afford homes in specific price ranges. The problem is that even modest single-family homes cost as much as lavish pads did a few years ago, so buyers are stuck either waiting for more inventory to come online or moving to a more affordable area. And there are many more who are hoping prices will drop—but that might not happen anytime soon.
-          <br><br>And we chose Austin,Texas house listings as our topic, since we are interested to see if we could apply a machine learning model to such a robust market.
-          <br><br>The question we are trying to answer is can we determine the price of a house in Austin, Texas based on certain features of the property. We are also interested to see what features drive the price of the houses in Austin as well
-        </p>
+        <div class = "overlay-image" style = "background-image: url(https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?cs=srgb&dl=pexels-pixabay-259588.jpg&fm=jpg);"></div>
+          <div class = "container">
+            <h1> Machine Learning Model to Predict the House Prices</h1>
+            <a href = "predict" class = "btn btn-lg btn-primary">Get Started</a>
+          </div>
+      </div>
+      <div class="carousel-item" data-bs-interval = "3000">
+        <div class = "overlay-image" style = "background-image: url(https://images.pexels.com/photos/3773572/pexels-photo-3773572.png?cs=srgb&dl=pexels-curtis-adams-3773572.jpg&fm=jpg);"></div>
+        <div class = "container">
+          <h1> Machine Learning Model to Predict the House Prices</h1>
+          <a href = "predict" class = "btn btn-lg btn-primary">Get Started</a>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval = "3000">
+        <div class = "overlay-image" style = "background-image: url(https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?cs=srgb&dl=pexels-pixabay-280222.jpg&fm=jpg);"></div>
+        <div class = "container">
+          <h1> Machine Learning Model to Predict the House Prices</h1>
+          <a href = "predict" class = "btn btn-lg btn-primary">Get Started</a>
+        </div>
       </div>
     </div>
+    <a href = "#myCarousel"
+       class = "carousel-control-prev" role = "button"
+       data-bs-slide = "prev">
+       <span class ="sr-only">Previous</span>
+       <span class ="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a href = "#myCarousel"
+    class = "carousel-control-next" role = "button"
+    data-bs-slide = "next">
+    <span class ="sr-only">Next</span>
+    <span class ="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class = "col-md-3"> 
+        <ol>
+          <li><a href = "#heading_1">Main Heading</a></li>
+          <li><a href = "#objective">Objective</a></li>
+          <li><a href = "#topicmotivation">Topic Motivation</a></li>
+          <li><a href = "#datasource">Data Source</a></li>
+          <li><a href = "#focusquestions">Focus Questions</a></li>
+          <li><a href = "#database">Database</a></li>
+          <li><a href = "#datacleaning">Data Cleaning and Analysis</a></li>
+          <li><a href = "#dataexploration">Data Exploration</a></li>
+          <li><a href = "#mlmodel">Machine Learning Model</a></li>
+          <ul>
+            <li><a href = "#initexp">Initial Exploration</a></li>
+            <li><a href = "#featsel">Feature Selection</a></li>
+            <li><a href = "#femodel">Front End Model</a></li>
+            <ul>
+              <li><a href = "#hypertuning">Hyperparameter Tuning</a></li>
+              <li><a href = "#pipefe">Pipeline for Front End</a></li>
+            </ul>
+            <li><a href = "#expfemodel">Explanation of Front End Model</a></li>
+            <ul>
+              <li><a href = "#benefitsRFRM">Benefits of the Random Forest Regressor Model</a></li>
+              <li><a href = "#limitsRFRM">Limitations of the Random Forest Regressor Model</a></li>
+            </ul>
+            <li><a href = "#accuracy">Accuracy</a></li>
+            <li><a href = "#modcomp">Model Comparison</a></li>
+          </ul>
+          <li><a href = "#dashboard">Dashboard</a></li>
+          <li><a href = "#resource">Resources</a></li>
+          <li><a href = "#gooslide">Google Slides Presentation</a></li>
+          <li><a href = "#what">What would we do differently?</a></li>
+          <li><a href = "#branch">Branches</a></li>
+          <li><a href = "#seg3">Segment 3 Role</a></li>
+          <li><a href = "#seg4">Segment 4 Role</a></li>
+        </ol>
+
+
       </div>
-    </div>    
+
+      <div class = "col-md-9"> 
+        <h2><a name = "heading_1">Austin, TX Housing Market 2018-2021: Exploratory Data Analysis, Machine Learning Model for Prediction, Visualizations</a></h2>
+        <p>
+          <h6>Austin has among the most overpriced and competitive housing markets in the nation. As of July 2022, research suggests it is the second most overpriced housing market, with a 69.20% premium relative to its long-term pricing trend. Paralleling nationwide trends in urban areas, migration to the city, low mortgage rates, and low housing supplies are fueling a booming housing market, though there are signs suggesting cooling in the latter half of 2022. Subjectively, buying a house is reportedly extremely difficult - sellers often receive multiple offers over asking price immediately after listing a property.</h6>
+        </p>
+        <h2><a name = "objective">Objective</a></h2>
+        <p>
+          <ol>
+          <li>Identify which home characteristics determine price </li>
+          <li>Discover meaningful insights about relationships between the variables in a sale</li>
+          <li>Apply a machine learning model to predict the price of a typical house in Austin, TX.</li>
+        </ol>
+        </p>
+
+        <h2><a name = "topicmotivation">Topic Motivation</a></h2>
+        <p>
+          As discussed in the background section, Austin, TX has an incredibly competitive housing market, fueled by low inventory and increasing demand from migration. Buyers faced additional challenges as mortgage rates began to increase in the latter half of 2021. For aspiring homeowners, the experience of trying purchase a house is harrowing, with listings receiving multiple offers over asking price almost immediately. Austin is also the home of three of our group members, two of whom are hoping to buy a home in the next five years. These exciting changes in the marekt make it an attractive target for exploratory data analysis and to practice our skills by applying a machine learning model to predict house price.
+        </p>
+
+        <h2><a name = "datasource">Data Source</a></h2>
+        <p>
+          We used a "AustinHousingdata" dataset sourced from Kaggle, originally scraped from Zillow by Eric Pierce using a third party API. We chose this dataset because it is extensive (over 15,000 data points), covers several years of interest (2018 - 2021), and has a broad set of house characteristics concerning location, size, rooms, school information, and more. House sales are not public record in Texas, so extensive datasets are difficult to access. In addition, other analyses of this dataset are publicly available, which provided some context for our project. You can access the full dataset here.
+          <a href = "https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data?select=austinHousingData.csv">AustinHousingData</a>
+        </p>
+        <h2><a name = "focusquestions">Focus Questions</a></h2>
+        <p>
+          <ol>
+            <li>Can we predict the price of a house in Austin under December 2019 market conditions using a machine learning model?</li>
+            <li>Which features drive the price of houses in Austin?</li>
+            <li>What other meaningful relationships between variables can be discovered in this dataset?</li>
+          </ol>
+        </p>
+        <h2><a name = "database">Database</a></h2>
+        <p>
+          The database management system we are using is PostgreSQL, hosted by Heroku. The database contains seven tables, and connects to our machine learning models in Google Colaboratory notebooks. Flask and JavaScript are used to to display data from the database on our front end website.
+          <br>
+          <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/53fa41df2eb98dc0afdd1672270ee6514f4d05b9/Images/database_ERD.png?raw=true" alt = "Alt_text">
+        </p>
+        <h2><a name = "datacleaning">Data Cleaning and Analysis</a></h2>
+        <p>
+          <ul>
+            <li>Python and pandas were used to clean and analyze the data in google colab notebooks. See the <a href = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Jayan/Analysis/Cleaning_Data_for_Machine_Learning_Model.ipynb">Cleaning Data for Machine Learning Model </a>google colab notebook for a detailed and commented analysis.</li>
+            <ul>
+              <li>The distribution of variables was examined, including many with right-skew.</li>
+              <li>Poor data was identified and removed, corrected, or imputed.</li>
+              <li>For variables with extreme outliers, datapoints were removed. We wanted to focus on training a model that could accurately predict the price of a typical Austin house, which justified our choice of removing data points the skew the data excessively.</li>
+            </ul>
+            <li>Importantly, we decided to limit our data to 2018-2019 only to avoid the volatile fluctuations that occurred once the COVID-19 pandemic began. In the future, we hope to include that data as well to see how it affects our model.</li>
+            <li>To provide the model with an up-to-date target variable, we appreciated the latest selling price to December 2019 market conditions using the median house price increase for the Austin, TX real estate market. This data was sourced from the <a href = "https://www.recenter.tamu.edu/data/housing-activity#!/activity/Local_Market_Area_(LMA)/Austin_(Austin_BoR)">Texas Real Estate Research Center</a>. We calculated the appreciation rate by month, and used a SQL join to accomplish the final calculation of the "December 2019" price.</li>
+          </ul>
+        </p>
+
+      </p>
+      <h2><a name = "dataexploration">Data Exploration</a></h2>
+      <p>
+        <ul>
+          <li>Data was explored with pandas, seaborn visualizations, tableau visualizations, and other python libraries. See the <a href = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Jayan/Analysis/Cleaning_Data_for_Machine_Learning_Model.ipynb">Cleaning Data for Machine Learning Model</a> google colab notebook for a detailed and commented analysis, and our tableau dashboard for a visualization summary.</li>
+          <ul>
+            <li>The Covid-19 pandemic marked a severe departure from the previous trend, with selling price and price per square foot skyrocketing.</li>
+            <li>Many characteristics of sold houses in Austin, like sale price and living area, are right-skewed, with many outliers on the high-end. This parallels the right skew of the distribution of household income.</li>
+            <li>Location is highly correlated to sale price. Zipcode, latitude, longitude, and distance from the city center all affect price in geographically recognizable patterns.</li>
+            <li>Unsurprisingly, the size of the living area and the lot of a house are both strongly positively correlated to price.</li>
+            <li>School ratings have a recognizable geographic pattern and are strongly positively correlated to price.</li>
+          </ul>
+        </ul>
+      </p>
+      <p><a href = "#heading_1">Top</a></li></p>
+        <h2><a name = "mlmodel">Machine Learning Model</a></h2>
+        <p>
+          <h3><a name = "initexp">Initial Exploration</a></h3>
+          <ul>
+            <li>We used the Scikit-learn python library to create our models. We tried a variety of linear models before moving on to ensemble methods, including Random Forest Regressor, AdaBoost, and XGBoost.</li>
+            <li>We split our data into 70% training data and 30% testing data.</li>
+            <li>Our models take in static data from our Heroku SQL database.</li>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/database_connection.png?raw=true" alt = "Alt_text2">
+            <li>Our original trials settled on the Random Forest Regressor as the likely best option. A first trial with no feature selection and zip code manually hot encoded resulted in an impressive coefficient of determination of 0.743, a significant improvement over the linear models.</li>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/random_forest_regressor.png?raw=true" alt = "Alt_text3">
+          </ul>
+        </p>
+        <p><a href = "#heading_1">Top</a></li></p>
+        <p>
+          <h3><a name = "featsel">Feature Selection</a></h3>
+          <ul>
+            <li>We explored correlations using a heat map and scatterplots to find variables that were strongly correlated with house price.</li>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/heat_map.png?raw=true" alt = "Alt_text4">
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/exploring_correlations.png?raw=true" alt = "Alt_text5">
+            <li>Random Forest models conveniently intrinsically rank features according to their importance to the model. We used the SelectFromModel meta-estimator to visualize and select only those features that were above the mean importance level - 10 in total: 'zipcode','latitude', 'longitude', 'yearBuilt', 'numOfAppliances', 'lotSizeSqFt', 'livingAreaSqFt', 'avgSchoolDistance', 'avgSchoolRating', 'avgSchoolSize'.</li>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/feature_importances.png?raw=true" alt = "Alt_text6">
+            <li>Ultimately, dropping these features did not improve our model - the coefficient of variation stayed about the same (0.741). Random forest models are good at finding the signal in the noise, and generally reducing the data available, even if it has low importance, does not improve its predictions. Still, we were able to reduce the number of features fed into the model by over half without meaningfully affecting its power.</li>
+          </ul>
+        </p>
+        <p><a href = "#heading_1">Top</a></li></p>
+        <h3><a name = "femodel">Front End Model</a></h3>
+        <ul>
+          <li>We intended to make a model that could provide a house price based on user input on a front end. For this model, we decided to reduce the number of features to only those that would be practical for a user to know and enter: zip code, year built, lot size in square feet, living area in square feet, and average school rating. This first attempt achieved a coefficient of determination of 0.703, significantly lower than the model using 10 features.</li>          
+          <h4><a name = "hypertuning">Hyperparameter Tuning</a></h4>
+          <ul>
+            <li>We used RandomizedSearchCV to search for best hyperparameters for our first front end model from a pre-defined grid. The tuned model with manually hot encoded zip code achieved a coefficient of determination of 0.733.</li>
+          </ul>
+          <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/best_parameters.png?raw=true" alt = "Alt_text7">          
+          <h4><a name = "pipefe">Pipeline for Front End</a></h4>
+          <ul>
+            <li>On testing the model for the front end, we realized that it would be difficult to code the user input of the hot encoded variable. We made an updated model using a column transformer pipeline which allowed for the zipcode to be input as a string and transformed within the model before being fed into the random forest regressor. We repeated hyperparameter tuning on this model as well, achieving a coefficient of determination of 0.718. Interestingly, this was slightly lower than the score for the same model with manually hot encoded zip code.</li>
+          </ul>
+          <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/residuals_front_end.png?raw=true" alt = "Alt_text8">
+          
+        </ul>
+      </p>
+      <p>      
+        <p><a href = "#heading_1">Top</a></li></p>
+      <h3><a name = "expfemodel">Explanation of Front End Model</a></h3>
+
+          We chose the Random Forest Regressor based on empirical experimentation with the accuracy of different models. Random forest is a supervised learning algorithm that uses an ensemble learning method for classification or regression. It uses multiple decision trees running in parallel, and averages the predictions of each to make a final prediction. With bootstrapping on, each decision tree trains on a subset of the data. In addition, random forest uses a random subset of features to make decisions at each split.
+          <br><br>We used the built-in feature selection function to determine feature importances and reduce the amount of input for the ideal model, but this did not result in improved explained variation. We further reduced the number of features to only 5 for the purposes of creating a model for interactive prediction on our front end ('zipcode' - hot encoded, 'yearBuilt', 'lotSizeSqFt', 'livingAreaSqFt', 'avgSchoolRating'), and incorporated a column transformer pipeline to allow for string input.
+          <br><br>We continued to improve the model by performing a grid search for hyperparameters, reaching a coefficient of determination of 0.71 for our front end model.
+        
+        <br>        
+        <h4><a name = "benefitsRFRM">Benefits of the Random Forest Regressor Model</a></h4>
+        <ul>
+          <li>Robust to outliers and non-linear data</li>
+          <li>Scaling and normalization is not necessary</li>
+          <li>Handles large datasets well</li>
+          <li>Provides variable importance intrinsically, allowing you to draw conclusions about what is driving the prediction</li>
+        </ul>
+        <br>
+        <h4><a name = "limitsRFRM">Limitations of the Random Forest Regressor Model</a></h4>
+        <ul>
+          <li>Are difficult to interpret compared to linear regression, which can output an equation. Decision trees can be viewed, but they are large and high in number. As an ensemble method, the decisions of individual trees are averaged, making viewing any single tree less useful.</li>
+          <li>When the data set is large, the model takes up a lot of memory.</li>
+          <li>It has a tendency to overfit.</li>
+          <li>It cannot extrapolate outside the dataset.</li>
+        </ul>
+      </p>
+      <p>
+        <h3><a name = "accuracy">Accuracy</a></h3>
+          <ul>
+            <li>The dataset lacks important information that is often used in housing prediction models, which may explain why it is only moderately accurate. Examples of other desirable features include: home quality, last renovation, neighborhood quality.</li>
+          </ul>
+        </p>        
+        <h3><a name = "modcomp">Model Comparison</a></h3>
+        <p>After finalizing a model for the front end, we continued to compare options for models to try to optimize the predictions. Some variations included: </p>
+          <ul>
+            <li>Incorporating a hot encoding pipeline or manually hot encoding</li>
+            <li>Scaling using MinMaxScaler</li>
+            <li>Using other ensemble models like AdaBoost and XGBoost</li>
+            <li>Using all 34 features, 10 selected features, or the 5 front end features</li>
+            <br>
+            XGboost proved to be slightly better than our best Random Forest Regressor model, with an R^2 of 0.748 vs 0.742.
+            <p>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/model_table.png?raw=true" alt = "Alt_text9">
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/residual_xgb.png?raw=true" alt = "Alt_text10">
+            </p>
+          </ul>
+        </p>   
+        <p><a href = "#heading_1">Top</a></li></p>
+        <h2><a name = "dashboard">Dashboard</a></h2>
+        <p>
+          <ul>
+            <li>We combined Flask with D3.js to create a web application as a front end for our project.</li>
+            <li>The front end allows a user to input variables and receive a prediction based on our machine learning model.</li>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/front_end_predict.png?raw=true" alt = "Alt_text11">
+            <li>Our front end also incorporates a tableau story with the most important visualizations from our exploratory data analysis.</li>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/front_end_tableau.png?raw=true" alt = "Alt_text12">
+          </ul>
+        </p>
+
+
+        <h2><a name = "resource">Resources</a></h2>
+        <p>
+          <ul>
+            <li><a href = "https://www.kaggle.com/datasets/ericpierce/austinhousingprices">Kaggle Data Set</a></li>
+            <li><a href = "https://www.kaggle.com/code/threnjen/austin-housing-eda-nlp-models-visualizations/data?select=austinHousingData.csv">Austin Housing - EDA, NLP, Models, Visualizations, Jen Wadkins</a></li>
+            <li><a href = "https://www.recenter.tamu.edu/data/housing-activity#!/activity/Local_Market_Area_(LMA)/Austin_(Austin_BoR)">Texas A&M University Texas Real Estate Research Center, Housing Activity for Austin (Austin BoR)</a></li>
+            <li><a href = "https://business.fau.edu/executive-education/housing-market-ranking/housing-top-100/index.php">Top 100 Housing Markets</a></li>
+            <li><a href = "https://medium.com/codex/house-price-prediction-with-machine-learning-in-python-cf9df744f7ff">House Price Prediction With Machine Learning in Python</a></li>
+            <li><a href = "https://medium.com/hackerdawn/house-prices-prediction-using-random-forest-aa8722347276">House Prices Prediction Using Random Forest</a></li>
+            <li><a href = "https://machinelearningmastery.com/columntransformer-for-numerical-and-categorical-data/">How to Use the ColumnTransformer for Data Preparation</a></li>
+          </ul>
+        </p>        
+        <p><a href = "#heading_1">Top</a></li></p>
+        <h2><a name = "gooslide">Google Slides Presentation</a></h2>
+        <p>
+          <ul>
+            <li><a href = "https://docs.google.com/presentation/d/1qW7ySGBoWv22oxZI2QIVgwt6B0VDeACSnAcm5nQMxZI/edit?usp=sharing">Google Slides Presentation</a></li>
+            <img src = "https://github.com/raneymjohnGit/Austin_TX_House_Listings/blob/main/Images/google_slides_presentation.png?raw=true" alt = "Alt_text13">
+            
+          </ul>
+        </p>
+        <p>
+        <h2><a name = "what">What would we do differently?</a></h2>
+        <ul>
+          <li>Try to scrape Zillow ourselves to get up to date data</li>
+          <li>Use the data points through 2021 to see if the model can predict prices even during the pandemic</li>
+          <li>Explore how the pandemic affected prices differently based on location</li>      
+          <li>Use packages like Yellowbrick to quickly and efficiently visualize model performance and select features</li>
+          <li>Try using neural networks</li>      
+        </ul>
+      </p>
+
+      <p>
+      <h2><a name = "branch">Branches</a></h2>
+      <ul>
+        <li>main - Main Branch</li>
+        <li>Lucy - Branch for Lucy</li>
+        <li>jayanbranch - Branch for Jayan</li>      
+        <li>stephenbranch - Branch for Stephen</li>
+        <li>raneybranch - Branch for Raney</li>      
+        <li>Visualizations - Branch for Visuals</li>      
+      </ul>
+      </p>
+
+      <p>        
+        <h2><a name = "seg3">Segment 3 Role</a></h2>
+        <ul>
+          <li>Raney - X</li>
+          <li>Jayan - Square</li>
+          <li>Lucy - Circle</li>      
+          <li>Stephen - Triangle</li>
+        </ul>
+        </p>
+
+        <p>
+          <h2><a name = "seg4">Segment 4 Role</a></h2>
+          <ul>
+            <li>Raney</li>
+            <li>Jayan</li>
+            <li>Lucy</li>      
+            <li>Stephen</li>
+          </ul>
+        </p>
+        <p><a href = "#heading_1">Top</a></li></p>
+
 </div>
+
 </body>
 </html>

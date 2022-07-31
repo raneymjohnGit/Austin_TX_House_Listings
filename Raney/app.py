@@ -84,6 +84,20 @@ def index_page():
     errorMessage = {}  
     return render_template('index.html',errorMessage = errorMessage)
 
+@app.route('/home')  
+def home_page():
+    errorMessage = {}  
+    return render_template('index.html',errorMessage = errorMessage)
+
+@app.route('/predict')  
+def predict():
+    errorMessage = {}  
+    return render_template('predict.html',errorMessage = errorMessage)
+
+@app.route('/trends')   
+def trend_page():    
+    return render_template('trends.html')
+
 @app.route('/results',methods=['GET','POST'])  
 def submit():
 
@@ -105,7 +119,7 @@ def submit():
 
             return render_template('results.html', featureMessage = featureMessage,selectionMessage = selectionMessage)
         else:
-            return render_template('index.html', errorMessage = errorMessage)
+            return render_template('predict.html', errorMessage = errorMessage)
 
 if __name__ == "__main__":
    app.run()
