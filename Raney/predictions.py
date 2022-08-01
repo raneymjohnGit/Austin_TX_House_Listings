@@ -2,6 +2,9 @@ import joblib
 import pandas as pd
 from sqlalchemy.engine.create import create_engine
 import sklearn
+import boto3
+from config import DATA_BASE_USER,DATA_BASE_PASSWORD,DATA_BASE_HOST,DATA_BASE_PORT,DATA_BASE,S3_ACCESS,S3_SECRET_ACCESS
+from io import StringIO
 
 def predict_houseprice (featureValues):
     #load the model
@@ -19,7 +22,8 @@ def predict_houseprice (featureValues):
     return int(predictions[0])
 
 def jsonify_data(featureValues):
-    raw_db_url='dpaclsxjrpfluk:4fa14e6fdb846bd14d1a9eda261d554fab9688f2f4dd5483bc38d94cdee010ad@ec2-3-219-52-220.compute-1.amazonaws.com:5432/d7s0s0hs0a5lar'
+    raw_db_url = f"{DATA_BASE_USER}:{DATA_BASE_PASSWORD}@{DATA_BASE_HOST}:{DATA_BASE_PORT}/{DATA_BASE}"
+    
     # Convert binary string to a regular string & remove the newline character
     db_url = raw_db_url
 
@@ -33,7 +37,6 @@ def jsonify_data(featureValues):
 
     # dataframe to sql
     df = pd.read_sql_table('cleaned_data_1', engine)
-
     
     zipcode = int(featureValues["zipcode"])
     yearBuilt = int(featureValues["yearBuilt"])
@@ -64,6 +67,11 @@ def jsonify_data(featureValues):
     columns = ["city","zipcode","lotSizeSqFt","livingAreaSqFt","avgSchoolRating","numOfBedrooms","numOfBathrooms","streetAddress", "latestprice","location"]
     
     filtered_df = filtered_df[columns]    
-    
-    #Create the JSON file for JS to use
-    filtered_df.to_json('C:/Users/raney/OneDrive/Desktop/Analysis_Projects/Austin_TX_House_Listings/Raney/static/js/dataset.js', orient = 'records')
+        
+    #Create the JSON file and Loading the file to Amazon S3 bucket
+    s3 = boto3.client("s3",aws_access_key_id=S3_ACCESS,aws_secret_access_key=S3_SECRET_ACCESS)
+    json_buffer = StringIO()
+    filtered_df.to_json(json_buffer, orient = 'records')
+    json_buffer.seek(0)
+    s3.put_object(Bucket =  "finalproject-04", Body = json_buffer.getvalue(), Key = "dataset.json")
+

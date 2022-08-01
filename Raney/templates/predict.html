@@ -92,13 +92,17 @@
 <div class="wrapper">
     <div class="container-fluid">
       <div class="row">
-        <div class= "col-md-2">
+        <div class= "col-md-3">
           <div id = "contents">
             <p>Contents
               <ol> <a href = "https://github.com/raneymjohnGit/Austin_TX_House_Listings">GitHub Page </a></ol>
               <ol> <a href = "trends">House Price Trends </a></ol>
               <ol> <a href = "https://docs.google.com/presentation/d/1qW7ySGBoWv22oxZI2QIVgwt6B0VDeACSnAcm5nQMxZI/edit?usp=sharing">Google Slides Presentation</a></ol>
-                                          
+            </p>
+          </div>
+        </div>
+        <div class="col-md-9" >
+            <p>
               <form class = "bg-grey" action = "/results" method="post">
                 <ol><label>Enter the Features for Prediction</label></ol>
                   <ul class = "list-group">
@@ -150,17 +154,17 @@
                     </li>   
                     <li class = "list-group-item">
                       <label for="yearBuilt">Year Built</label>
-                      <p><input type = "number" placeholder=2000 id ="yearBuilt" name = "yearBuilt"/>
+                      <input type = "number" placeholder=2000 id ="yearBuilt" name = "yearBuilt"/>
                       <p class = "errMsg" id = "erryearBuiltMessage"> {{errorMessage.yearBuilt}} </p> 
                     </li>  
                     <li class = "list-group-item">
                       <label for="lotSizeSqFt">Enter Lot Size Square Feet</label>
-                      <p><input type = "number" placeholder=10000 id ="lotSizeSqFt" name = "lotSizeSqFt"/>
+                      <input type = "number" placeholder=10000 id ="lotSizeSqFt" name = "lotSizeSqFt"/>
                       <p class = "errMsg" id = "errlotSizeSqFtMessage"> {{errorMessage.lotSizeSqFt}} </p> 
                     </li>   
                     <li class = "list-group-item">
                       <label for="livingAreaSqFt">Enter Living Area Square Feet</label>
-                      <p><input type = "number" placeholder=3000 id ="livingAreaSqFt" name = "livingAreaSqFt"/>
+                      <input type = "number" placeholder=3000 id ="livingAreaSqFt" name = "livingAreaSqFt"/>
                       <p class = "errMsg" id = "errlivingAreaSqFtMessage"> {{errorMessage.livingAreaSqFt}} </p> 
                     </li>                                 
                     <li class = "list-group-item">
@@ -186,20 +190,9 @@
                   
               </form>              
             </p>
-          </div>
         </div>
-
-        <div class="col-md-1">
-        </div>
-
-        <div class="col-md-7" >
-   
-        </div>
-                                               
-        <div class="col-md-2">
-        </div>
-      </div>        
-    </div>       
+      </div>         
+	</div>  
 </div>
 </body>
 </html>
