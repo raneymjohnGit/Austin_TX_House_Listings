@@ -3,7 +3,7 @@
 console.log("working");
 
 // read local JSON file in javascript
-fetch("https://finalproject-04.s3.amazonaws.com/dataset.json")
+fetch(JSON_URL)
   .then(function (response) {
     return response.json();
   })
