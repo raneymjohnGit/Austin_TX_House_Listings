@@ -69,9 +69,12 @@ def jsonify_data(featureValues):
     filtered_df = filtered_df[columns]    
         
     #Create the JSON file and Loading the file to Amazon S3 bucket
-    s3 = boto3.client("s3",aws_access_key_id=S3_ACCESS,aws_secret_access_key=S3_SECRET_ACCESS)
-    json_buffer = StringIO()
-    filtered_df.to_json(json_buffer, orient = 'records')
-    json_buffer.seek(0)
-    s3.put_object(Bucket =  "finalproject-04", Body = json_buffer.getvalue(), Key = "dataset.json")
+    #s3 = boto3.client("s3",aws_access_key_id=S3_ACCESS,aws_secret_access_key=S3_SECRET_ACCESS)
+    #json_buffer = StringIO()
+    #filtered_df.to_json(json_buffer, orient = 'records')
+    #json_buffer.seek(0)
+    #s3.put_object(Bucket =  "finalproject-04", Body = json_buffer.getvalue(), Key = "dataset.json")
+
+    #Create the JSON file for JS to use
+    filtered_df.to_json('C:/Users/raney/OneDrive/Desktop/Analysis_Projects/Austin_TX_House_Listings/Raney/static/js/dataset.js', orient = 'records')
 

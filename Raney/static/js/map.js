@@ -2,10 +2,14 @@
 // Add console.log to check to see if our code is working.
 console.log("working");
 
+// read from AWS S3
+//fetch(JSON_URL)
+
 // read local JSON file in javascript
-fetch(JSON_URL)
+fetch("static/js/dataset.js")
   .then(function (response) {
-    return response.json();
+	return response.json();
+
   })
   .then(function (houseData) {
     
@@ -39,7 +43,7 @@ fetch(JSON_URL)
   	var tbody = d3.select("tbody");
 	tbody.html("");
 
-	// Loop through the cities array and create one marker for each city.
+	// Loop through the house array and create one marker for each house.
 	houseData.forEach(function(house) {
 	console.log(house)
 	let row = tbody.append("tr");
@@ -64,12 +68,6 @@ fetch(JSON_URL)
 	// layers are visible.
 	L.control.layers(baseMaps).addTo(map);
   })
-
-
-
-
-
-
 
 console.log("working");
 

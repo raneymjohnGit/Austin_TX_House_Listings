@@ -1,0 +1,4 @@
+# Ignore the config.js file.
+config.js
+# Ignore the config.py file.
+config.py
