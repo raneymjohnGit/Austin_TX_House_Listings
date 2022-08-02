@@ -2,9 +2,7 @@ from xml.dom.minidom import Document
 from flask import Flask, render_template, request
 import predictions
 
-
 app = Flask(__name__)
-
 
 def validateForm():
     valid = True
