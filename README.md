@@ -70,7 +70,7 @@ We used a "AustinHousingdata" dataset sourced from Kaggle, originally scraped fr
 
 ## Feature Selection
 
-- We explored correlations using a heat map and scatterplots to find variables that were strongly correlated with house price.
+- We explored correlations using a heat map and scatterplots to find variables that were strongly correlated with house pric e.
 
 ![Correlation Heatmap](Images/heat_map.png)
 ![Exploring Correlations](Images/exploring_correlations.png)
